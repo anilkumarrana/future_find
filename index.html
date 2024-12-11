@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureFinde</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            background-color: rgb(87, 86, 86);
+        }
+        .container{
+            /* width: 300px; */
+            height:400px;
+            box-shadow: 0px 5px 3px white;
+            border-radius: 5px;
+            background-color:red;
+            text-align: center;
+            margin-top: 100px;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        .container h1{
+            padding: 10px;
+        }
+        input{
+            width: 50%;
+            padding: 05px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        #age{
+            width: 30%;
+            display: block;
+            margin-left: 190px;
+        }
+        button{
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            background-color: rgb(101, 134, 232);
+            color: white;
+            cursor: pointer;
+        }
+        textarea{
+            display: block;
+            width: 90%;
+            height: 150px;
+            margin-left: 25px;
+            margin-top: 20px;
+            border-radius: 5px;
+
+        }
+        @media  only screen and (max-width: 480px){
+            body{
+                /* padding: 0px; */
+                /* margin: 0px; */
+                display: block;
+                /* justify-content: none; */
+                /* margin: 0px; */
+                /* margin-bottom: 100%; */
+                background-color: aqua;
+            }
+            .container{
+                margin: 0px;
+                height:450px;
+            }
+            #age{
+                width: 50%;
+            /* display: block; */
+            /* margin-left: 190px; */
+            margin-left: 73px;
+            }
+            textarea{
+                margin-left: 15px;
+                padding: 5px;
+                font-weight: 600;
+            }
+        }
+</style>
+<body>
+     
+    <div class="container">
+          <h1>Chart Your Dreams with Future Finder</h1>
+          <input type="text"id="username" placeholder="Enter your name">
+          <input type="number" name="number"id="age" placeholder="Enter your age">
+          <button type="submit" id="submitBtn" onclick="handleSubmit()">submit</button>
+          <button type="reset" id="resetBtn" onclick="resetBtn()">Reset</button>
+          <textarea name="" id="message"></textarea>
+    </div>
+    <script>
+        const username=document.getElementById("username");
+        const userage=document.getElementById("age");
+        const submitBtn=document.getElementById("submitBtn");
+        const message = document.getElementById("message");
+        const reset = document.getElementById("resetBtn");
+
+
+         //this simple example for future find webite 
+        // 
+        // function handleClick(){
+        //     const inputName = username.value;
+        //     const inputAge = userage.value;
+        //     message.textContent =`Your name is ${inputName}! and your age is ${inputAge}`;
+        // }
+            
+        function handleSubmit(){
+            const inputName = username.value;
+            const inputAge =  userage.value;
+
+            if(inputName === "" || inputAge === ""){
+                message.textContent = "please fill the both field";
+                return;
+            }
+             
+           if(inputName === "Anil" && inputAge == 20 ){
+            message.textContent = `Your name is ${inputName} and your age is ${inputAge}! I just want to remind you how incredible your future looks! You have so much potential to achieve amazing things, and I believe in your ability to turn your dreams into reality. Life may present challenges, but your strength, determination, and positivity will always guide you through.`
+           }
+          else if(inputName === "Dipanshu" && inputAge == 21 ){
+            message.textContent = `Your name is ${inputName} and your age is ${inputAge}!Every step you take today is paving the way for a bright and successful tomorrow. Stay focused, trust yourself, and never stop believing in your greatness. Remember, the sky is not the limit—your potential is limitless!`
+           }
+            else if(inputName==="Prasan" && inputAge == 20){
+                message.textContent = `Your name is ${inputName} and your age is ${inputAge}!In the future, I see you ruling the world—well, at least your couch as the CEO of Snacking! Your brilliance will inspire memes, and your laugh will be a national anthem. Fame, fortune, and an endless pizza supply await you. Keep shining, future legend of awesomeness!`
+            }
+            else if(inputName==="Aman" && inputAge == 24){
+                message.textContent = `Your name is ${inputName} and your age is ${inputAge}!Gandu`;
+            }
+            else if(inputName==="Bishendar" && inputAge == 21){
+                message.textContent = `Your name is ${inputName} and your age is ${inputAge}!Suwar!`;
+            }
+            else if(inputName==="ishan" && inputAge == 24){
+                message.textContent = `Your name is ${inputName} and your age is ${inputAge}!Bantha!`
+            }
+            else if(inputName==="" && inputAge == 24){
+                message.textContent = "please fill your name"
+            }
+            else if(inputName==="" && inputAge == ""){
+                message.textContent = "please fill your age"
+            }
+            else{
+                message.textContent = "please fill both field"
+            }
+        }
+         function resetBtn(){
+            username.value = "";
+            userage.value = "";
+            message.textContent = "";
+         }
+    </script>
+</body>
+</html>
